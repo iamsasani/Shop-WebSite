@@ -1,22 +1,23 @@
 import { useContext, useState } from "react";
 import { ShopContext } from "../../context/shopContext";
+import { counter } from "@fortawesome/fontawesome-svg-core";
 function Product(props) {
   const { id, productImage, productName, price } = props.data;
 
   const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
   return (
-    <div className="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3  center flex flex-col gap-5 mr-10 mb-10 ">
-      <img className="aspect-square mb-10" src={productImage} />
+    <div className="productCart ">
+      <img className="productImg" src={productImage} />
       <h1 className="text-2xl ">{productName}</h1>
-      <p className="text-gray-400 text-lg font-sans">price : {price}$</p>
+      <p className="productPrice">price : {price}$</p>
       <div>
-        <button onClick={()=>addToCart(id)} className="text-lg py-2 px-4 rounded-xl cursor-pointer bg-cyan-600 text-white ">
+        <button onClick={() => addToCart(id)} className="productBtn">
           +
         </button>
         <span className="mx-3 font-sans">
           {cartItems?.filter((row) => row.id === id)[0]?.count}
         </span>
-        <button onClick={() => removeFromCart(id)} className="text-lg py-2 px-4 rounded-xl cursor-pointer bg-cyan-600 text-white ">
+        <button onClick={() => removeFromCart(id)} className="productBtn">
           -
         </button>
       </div>

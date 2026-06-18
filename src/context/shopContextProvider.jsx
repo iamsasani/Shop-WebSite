@@ -5,11 +5,11 @@ export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (itemId) => {
-    setCartItems(prev => {
-      const exists = prev.find(item => item.id === itemId);
+    setCartItems((prev) => {
+      const exists = prev.find((item) => item.id === itemId);
       if (exists) {
-        return prev.map(item =>
-          item.id === itemId ? { ...item, count: item.count + 1 } : item
+        return prev.map((item) =>
+          item.id === itemId ? { ...item, count: item.count + 1 } : item,
         );
       }
       return [...prev, { id: itemId, count: 1 }];
@@ -17,12 +17,12 @@ export const ShopContextProvider = (props) => {
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems(prev =>
+    setCartItems((prev) =>
       prev
-        .map(item =>
-          item.id === itemId ? { ...item, count: item.count - 1 } : item
+        .map((item) =>
+          item.id === itemId ? { ...item, count: item.count - 1 } : item,
         )
-        .filter(item => item.count > 0)
+        .filter((item) => item.count > 0),
     );
   };
 
