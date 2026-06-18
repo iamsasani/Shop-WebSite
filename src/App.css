@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.wrapper{
+    @apply font-serif;
+}
+
+.center{
+    @apply flex justify-center items-center;
+}
