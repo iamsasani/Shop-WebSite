@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    
+
     <footer className=''>
 
         <div className=' bg-black/90  font-serif p-10 center  flex-col'>
@@ -30,7 +30,7 @@ function Footer() {
                     <FontAwesomeIcon  icon={faYoutube}/>
                     </span>
                 </div>
-                <ul className="center footList">
+                <ul className=" center flex-col lg:flex-row footList ">
                     <Link to="/">
                     <li>Home</li>
                     </Link>

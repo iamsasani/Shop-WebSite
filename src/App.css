@@ -21,6 +21,9 @@
 .countItem{
     @apply bg-red-600 rounded-full px-2 font-sans text-[15px] relative -top-1 -left-1 ;
 }
+.userSpan{
+    @apply hover:text-gray-400 hover:border-b hover:pb-2 cursor-pointer ;
+}
 
 /* product css */
 
